@@ -1,0 +1,6 @@
+{
+  "extends": "./.eslintrc-cjs.json",
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

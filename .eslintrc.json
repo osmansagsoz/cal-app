@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "overrides": [
+      {
+        "files": ["**/*.js"],
+        "extends": "./config/.eslintrc-cjs.json"
+      },
+      {
+        "files": ["**/*.mjs"],
+        "extends": "./config/.eslintrc-mjs.json"
+      },
+      {
+        "files": ["**/*.ts", "**/*.tsx"],
+        "extends": "./config/.eslintrc-tsx.json"
+      }
+    ]
+  }
+  
