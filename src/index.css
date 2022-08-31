@@ -1,5 +1,14 @@
 @import "normalize.css";
 
+:root {
+  --grey-100: #e4e9f0;
+  --grey-200: #cfd7e3;
+  --grey-300: #b5c0cd;
+  --grey-800: #3e4e63;
+  --grid-gap: 1px;
+  --day-label-size: 20px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -32,7 +41,7 @@ dd {
   padding: 0;
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
 
