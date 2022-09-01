@@ -7,6 +7,8 @@
   --grey-800: #3e4e63;
   --grid-gap: 1px;
   --day-label-size: 20px;
+  --yearView-height: 25px;
+  --monthView-height: 100px;
 }
 
 html {

@@ -1,41 +1,37 @@
 import dayjs from "dayjs";
 import { useCallback } from "react";
-import css from "./header.module.css";
-
-export const Header = ({
+import {
   showCurrentMonth,
   showNextMonth,
   showPreviousMonth,
-  time,
-}: {
-  showCurrentMonth: () => void;
-  showNextMonth: () => void;
-  showPreviousMonth: () => void;
-  time: {
-    month: string;
-    year: string;
-  };
-}) => {
+} from "../../features/monthSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import css from "./header.module.css";
+
+export const Header = () => {
+  const dispatch = useAppDispatch();
+  const { month, year } = useAppSelector((state) => state.monthView);
+
   const displayCurrentMonth = useCallback((year: string, month: string) => {
     return dayjs(new Date(+year, +month - 1)).format("MMMM YYYY");
   }, []);
 
   const onPrevClick = useCallback(() => {
-    showPreviousMonth();
-  }, [showPreviousMonth]);
+    dispatch(showPreviousMonth());
+  }, [dispatch]);
 
   const onNextClick = useCallback(() => {
-    showNextMonth();
-  }, [showNextMonth]);
+    dispatch(showNextMonth());
+  }, [dispatch]);
 
   const onTodayClick = useCallback(() => {
-    showCurrentMonth();
-  }, [showCurrentMonth]);
+    dispatch(showCurrentMonth());
+  }, [dispatch]);
 
   return (
     <section className={css.month_header}>
       <div className={css.month_header_selected_month}>
-        {displayCurrentMonth(time.year, time.month)}
+        {displayCurrentMonth(year, month)}
       </div>
       <div className={css.month_header_selectors}>
         <button className={css.previous_month_selector} onClick={onPrevClick}>

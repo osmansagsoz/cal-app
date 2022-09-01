@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import monthViewReducer from "./features/monthSlice";
+import yearViewreducer from "./features/yearSlice";
 
 const store = configureStore({
   reducer: {
-    date: dateReducer,
+    monthView: monthViewReducer,
+    yearView: yearViewreducer,
   },
 });
 
